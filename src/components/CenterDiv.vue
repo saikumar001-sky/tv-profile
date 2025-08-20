@@ -51,7 +51,7 @@
       Heyy ..! Are you wizard or what .. 🎯<button
         type="button"
         @click="emit('moveToNext')"
-        class="text-3xl"
+        class="text-3xl cursor-pointer"
       >
         ⏩
       </button>
