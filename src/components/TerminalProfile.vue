@@ -129,18 +129,18 @@
                   ><br />
                   Toolkit with HTML/JS compilers, JWT decoders, image
                   compressors, Base64 & UUID generators.<br />
-                  <a href="#" class="text-blue-400 underline" target="_blank"
+                  <a href="https://github.com/saikumar001-sky/Devguru" class="text-blue-400 underline" target="_blank"
                     >View In GitHub</a
                   >
                   |
-                  <a href="#" class="text-blue-400 underline" target="_blank"
+                  <a href="https://main--dev-ease-05a89e.netlify.app/" class="text-blue-400 underline" target="_blank"
                     >App Link</a
                   >
                 </li>
                 <li>
                   <span class="font-semibold">Gold Scheme</span><br />
                   Customer management system for gold shop owners.<br />
-                  <a href="#" class="text-blue-400 underline" target="_blank"
+                  <a href="https://github.com/saikumar001-sky/Gold-Scheme" class="text-blue-400 underline" target="_blank"
                     >View in GitHub</a
                   >
                 </li>
@@ -153,33 +153,33 @@
                   <span class="font-semibold">countryFlags-vue</span><br />
                   Vue 3 component package to display country flags by ISO 2 or
                   ISO 3 codes.<br />
-                  <a href="#" class="text-blue-400 underline" target="_blank"
+                  <a href="https://github.com/saikumar001-sky/countryflags-vue" class="text-blue-400 underline" target="_blank"
                     >View in GitHub</a
                   >
                   |
-                  <a href="#" class="text-blue-400 underline" target="_blank"
+                  <a href="https://www.npmjs.com/package/countryflags-vue" class="text-blue-400 underline" target="_blank"
                     >View in NPM</a
                   >
                 </li>
                 <li>
                   <span class="font-semibold">UUID Generator</span><br />
                   JavaScript npm package to generate UUID v4.<br />
-                  <a href="#" class="text-blue-400 underline" target="_blank"
+                  <a href="https://github.com/saikumar001-sky/uuid-generator" class="text-blue-400 underline" target="_blank"
                     >View in GitHub</a
                   >
                   |
-                  <a href="#" class="text-blue-400 underline" target="_blank"
+                  <a href="https://www.npmjs.com/package/uuidx4-generator" class="text-blue-400 underline" target="_blank"
                     >View in NPM</a
                   >
                 </li>
                 <li>
                   <span class="font-semibold">jwt-decoder-lib</span><br />
                   JavaScript npm package to decode JSON Web Tokens (JWT).<br />
-                  <a href="#" class="text-blue-400 underline" target="_blank"
+                  <a href="https://github.com/saikumar001-sky/token-decoder" class="text-blue-400 underline" target="_blank"
                     >View in GitHub</a
                   >
                   |
-                  <a href="#" class="text-blue-400 underline" target="_blank"
+                  <a href="https://www.npmjs.com/package/jwt-decoder-lib" class="text-blue-400 underline" target="_blank"
                     >View in NPM</a
                   >
                 </li>

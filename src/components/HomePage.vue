@@ -1,12 +1,38 @@
 <template>
+  <!-- Navbar with icons -->
+  <nav
+    class="fixed top-0 right-0 z-50 m-2 flex items-center gap-4 p-2 bg-white rounded-2xl shadow-lg"
+  >
+    <button
+      :class="[
+        'text-2xl cursor-pointer',
+        !isMonitor ? ' scale-105 bg-black p-1 rounded-2xl' : 'text-gray-400 hover:text-yellow-400',
+      ]"
+      @click="isMonitor = false"
+      title="TV Mode"
+    >
+      <span>📺</span>
+    </button>
+    <button
+      :class="[
+        'text-2xl cursor-pointer',
+        isMonitor ? ' scale-105 bg-black p-1 rounded-2xl' : 'text-gray-400 hover:text-blue-400',
+      ]"
+      @click="isMonitor = true"
+      title="Monitor Mode"
+    >
+      <span>🖥️</span>
+    </button>
+  </nav>
   <div class="flex justify-center items-center h-[100vh] main-bg w-full">
     <div class="relative h-[70vh] w-full md:w-3/5">
       <div
-        class="absolute w-full z-40 h-full bg-gray-500 tv-frame flex tv-shadow gap-2 p-12 rounded-4xl"
+        class="absolute w-full z-40 h-full bg-gray-500 tv-frame flex tv-shadow gap-2 rounded-4xl"
+        :class="isMonitor ? 'monitor-frame p-2 pb-12' : 'tv-frame p-12'"
       >
         <!-- TV screen Area  -->
         <div
-          class="bg-gray-700 z-40 tv-shadow h-full outline-[12px] outline-gray-900 w-full p-6 m-2 border-[20px] border-gray-800 rounded-4xl"
+          class="bg-gray-700 z-40 tv-shadow h-full outline-[12px] outline-black w-full p-6 m-2 border-[20px] border-gray-800 rounded-4xl"
         >
           <div
             v-if="stage === 1"
@@ -27,9 +53,22 @@
           <div>
             <TerminalProfile v-if="stage === 4" />
           </div>
+          <button
+            v-if="isMonitor"
+            title="Power Button"
+            @click="switchon"
+            class="border-[4px] absolute bottom-0 animate-bounce cursor-pointer border-gray-600 h-[30px] w-[30px] rounded-full mt-12 mx-auto tv-shadow"
+          >
+            <div
+              :class="startTv ? 'bg-green-500' : 'bg-red-500'"
+              class="w-full h-full flex justify-center rounded-full border-2 border-white tv-shadow"
+            >
+              <div class="w-[4px] h-[10px] bg-white"></div>
+            </div>
+          </button>
         </div>
         <!-- TV control Buttons  -->
-        <div class="h-full w-[100px]">
+        <div class="h-full w-[100px]" v-if="!isMonitor">
           <!-- TV speaker -->
           <div
             class="bg-gray-400 h-[200px] p-6 tv-shadow speaker-mesh border-2 border-gray-500 rounded-4xl mx-auto mb-4"
@@ -64,6 +103,7 @@
         </div>
       </div>
       <div
+        v-if="!isMonitor"
         class="tv-shadow tv-accessories absolute z-0 top-[-30px] left-[50%] right-[-50%] w-[100px] h-[100px] rounded-full bg-gray-500"
       >
         <div
@@ -90,6 +130,7 @@ import TerminalScreen from "./TerminalScreen.vue";
 import CenterDiv from "./CenterDiv.vue";
 import TerminalProfile from "./TerminalProfile.vue";
 const startTv = ref(false);
+const isMonitor = ref(false);
 const stage = ref(1);
 const moveToNext = () => {
   stage.value = 3;
@@ -98,13 +139,14 @@ const switchon = () => {
   startTv.value = !startTv.value;
   stage.value = startTv.value ? 2 : 1;
 };
+
 console.log("TerminalScreen component loaded");
 </script>
 <style scoped>
 .main-bg {
   background-image: url("../assets/bg2.png");
   background-size: contain;
-  background-position:top;
+  background-position: top;
   background-color: #181818;
 }
 .tv-shadow {
@@ -134,6 +176,12 @@ console.log("TerminalScreen component loaded");
 }
 .tv-frame {
   background-image: url("../assets/tv.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.monitor-frame {
+  background-image: url("../assets/tv2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
