@@ -1,11 +1,11 @@
 <template>
   <section class="text-left">
-    <div class="flex items-center gap-2 mb-2 bg-gray-600 p-2 rounded-lg">
+    <div class="flex items-center gap-1 mb-2 bg-gray-600 p-2 rounded-lg">
       <div class="w-3 h-3 rounded-full bg-red-500"></div>
 
       <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
       <div class="w-3 h-3 rounded-full bg-green-500"></div>
-      <p class="text-xs mb-0">
+      <p class="text-[9px] md:text-xs mb-0">
         Note: Type <span class="font-semibold text-yellow-500">help</span> to
         get all commands
       </p>
@@ -17,7 +17,7 @@
     >
       <div v-for="(entry, idx) in history" :key="idx" class="mb-1">
         <div class="flex items-baseline">
-          <span class="text-xs text-left">PS C: \profile\sai&gt;&nbsp;</span>
+          <span class="text-[10px] md:text-sm text-left">PS C: \profile\sai&gt;&nbsp;</span>
           <span class="text-xs font-mono text-green-300">{{
             entry.input
           }}</span>
@@ -232,7 +232,7 @@
         </div>
       </div>
       <div class="flex items-baseline">
-        <span class="text-xs text-left">PS C: \profile\sai&gt;&nbsp;</span>
+        <span class="text-[10px] md:text-xs text-left">PS C: \profile\sai&gt;&nbsp;</span>
         <input
           name="userInput"
           :autofocus="true"
