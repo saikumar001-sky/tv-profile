@@ -1,12 +1,14 @@
 <template>
-  <div class="w-full mx-auto">
-    <p class="text-xs">Are you eligible to view my profile...?</p>
-    <h2 class="text-lg font-bold text-[#ffe066] mb-2">
-      Let's check your CSS... Center the Box
+  <div class="w-full mx-auto overflow-auto h-[250px] md:h-full p-2">
+    <h2 class="text-sm md:text-lg font-bold text-[#ffe066] md:mb-2">
+      <span class="hidden md:block"> Let's check your CSS... </span>Center the Box
     </h2>
-    <form @submit.prevent class="flex gap-2">
+
+    <form @submit.prevent class="md:flex gap-2">
       <div class="mb-3">
-        <label class="block text-gray-200 mb-1">display</label>
+        <label class="block text-xs md:text-sm text-gray-200 mb-1"
+          >display</label
+        >
         <input
           v-model="display"
           class="w-full rounded px-2 outline-2 outline-white py-1 text-white"
@@ -14,7 +16,9 @@
         />
       </div>
       <div class="mb-3">
-        <label class="block text-gray-200 mb-1">justify-content</label>
+        <label class="block text-xs md:text-sm text-gray-200 mb-1"
+          >justify-content</label
+        >
         <input
           v-model="justifyContent"
           class="w-full rounded px-2 outline-2 outline-white py-1 text-white"
@@ -22,7 +26,9 @@
         />
       </div>
       <div class="mb-3">
-        <label class="block text-gray-200 mb-1">align-items</label>
+        <label class="block text-xs md:text-sm text-gray-200 mb-1"
+          >align-items</label
+        >
         <input
           v-model="alignItems"
           class="w-full rounded px-2 outline-2 outline-white py-1 text-white"

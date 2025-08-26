@@ -6,7 +6,9 @@
     <button
       :class="[
         'text-2xl cursor-pointer',
-        !isMonitor ? ' scale-105 bg-black p-1 rounded-2xl' : 'text-gray-400 hover:text-yellow-400',
+        !isMonitor
+          ? ' scale-105 bg-black p-1 rounded-2xl'
+          : 'text-gray-400 hover:text-yellow-400',
       ]"
       @click="isMonitor = false"
       title="TV Mode"
@@ -16,7 +18,9 @@
     <button
       :class="[
         'text-2xl cursor-pointer',
-        isMonitor ? ' scale-105 bg-black p-1 rounded-2xl' : 'text-gray-400 hover:text-blue-400',
+        isMonitor
+          ? ' scale-105 bg-black p-1 rounded-2xl'
+          : 'text-gray-400 hover:text-blue-400',
       ]"
       @click="isMonitor = true"
       title="Monitor Mode"
@@ -25,24 +29,28 @@
     </button>
   </nav>
   <div class="flex justify-center items-center h-[100vh] main-bg w-full">
-    <div class="relative h-[70vh] w-full md:w-3/5">
+    <div class="relative h-[40vh] md:h-[70vh] m-4 md:m-0 w-full md:w-3/5">
       <div
         class="absolute w-full z-40 h-full bg-gray-500 tv-frame flex tv-shadow gap-2 rounded-4xl"
-        :class="isMonitor ? 'monitor-frame p-2 pb-12' : 'tv-frame p-12'"
+        :class="
+          isMonitor ? 'monitor-frame p-2 pb-12' : 'tv-frame p-2 pb-6 md:p-12'
+        "
       >
         <!-- TV screen Area  -->
         <div
-          class="bg-gray-700 z-40 tv-shadow h-full outline-[12px] outline-black w-full p-6 m-2 border-[20px] border-gray-800 rounded-4xl"
+          class="bg-gray-700 z-40 tv-shadow h-full outline-[12px] outline-black w-full p-2 md:p-6 m-2 border-[8px] md:border-[20px] border-gray-800 rounded-4xl"
         >
           <div
             v-if="stage === 1"
             class="flex flex-col items-center justify-center h-full"
           >
-            <p class="text-center text-7xl">📺</p>
-            <div class="text-center text-yellow-500 font-bold text-2xl mb-4">
+            <p class="text-center text-3xl md:text-7xl">📺</p>
+            <div
+              class="text-center text-yellow-500 font-bold text-xl md:text-2xl mb-4"
+            >
               Welcome to my TV Profile
             </div>
-            <p>click on the power button to start</p>
+            <p class="text-xs md:text-sm">click on the power button to start</p>
           </div>
           <div>
             <TerminalScreen @moveToNext="moveToNext" v-if="stage === 2" />
@@ -68,21 +76,21 @@
           </button>
         </div>
         <!-- TV control Buttons  -->
-        <div class="h-full w-[100px]" v-if="!isMonitor">
+        <div class="h-full md:w-[100px]" v-if="!isMonitor">
           <!-- TV speaker -->
           <div
-            class="bg-gray-400 h-[200px] p-6 tv-shadow speaker-mesh border-2 border-gray-500 rounded-4xl mx-auto mb-4"
+            class="bg-gray-400 h-[100px] md:h-[200px] tv-shadow speaker-mesh border-2 border-gray-500 rounded-4xl mx-auto mb-4"
           ></div>
           <!-- TV Volume Control -->
           <div>
             <div
-              class="tv-accessories border-[6px] border-gray-600 h-[30px] w-[30px] rounded-full mb-2 mx-auto tv-shadow"
+              class="tv-accessories border-[6px] border-gray-600 h-[20px] w-[20px] md:h-[30px] md:w-[30px] rounded-full mb-2 mx-auto tv-shadow"
             ></div>
             <div
-              class="tv-accessories border-[6px] border-gray-600 h-[30px] w-[30px] rounded-full mb-2 mx-auto tv-shadow"
+              class="tv-accessories border-[6px] border-gray-600 h-[20px] w-[20px] md:h-[30px] md:w-[30px] rounded-full mb-2 mx-auto tv-shadow"
             ></div>
             <div
-              class="tv-accessories border-[6px] border-gray-600 h-[30px] w-[30px] rounded-full mb-2 mx-auto tv-shadow"
+              class="tv-accessories border-[6px] border-gray-600 h-[20px] w-[20px] md:h-[30px] md:w-[30px] rounded-full mb-2 mx-auto tv-shadow"
             ></div>
           </div>
           <!-- TV power button -->
@@ -90,7 +98,7 @@
             <button
               title="Power Button"
               @click="switchon"
-              class="border-[6px] animate-bounce cursor-pointer border-gray-600 h-[40px] w-[40px] rounded-full mt-8 mx-auto tv-shadow"
+              class="md:border-[6px] animate-bounce cursor-pointer border-gray-600 h-[30px] w-[30px] md:h-[40px] md:w-[40px] rounded-full mt-8 mx-auto tv-shadow"
             >
               <div
                 :class="startTv ? 'bg-green-500' : 'bg-red-500'"

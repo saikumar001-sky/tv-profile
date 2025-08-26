@@ -13,7 +13,7 @@
 
     <div
       id="terminalContainer"
-      class="overflow-y-auto h-[250px] mb-4 scroll-mb-1.5"
+      class="overflow-y-auto h-[200px] md:h-[250px] mb-4 scroll-mb-1.5"
     >
       <div v-for="(entry, idx) in history" :key="idx" class="mb-1">
         <div class="flex items-baseline">

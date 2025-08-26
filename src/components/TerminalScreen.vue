@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center justify-start rounded-xl p-8 pt-8 relative"
+    class="flex flex-col items-center justify-start rounded-xl md:p-8 pt-8 relative"
   >
     <!-- Mac Terminal style  -->
     <div class="flex">
@@ -10,22 +10,22 @@
       <div class="w-full max-w-[430px] h-12 overflow-hidden relative">
         <div class="flex flex-col animate-scroll-vertical">
           <div
-            class="text-[#ffe066] font-mono text-lg text-center tracking-wide py-2 pb-3"
+            class="text-[#ffe066] font-mono text-xs md:text-lg text-center tracking-wide py-2 pb-3"
           >
             Hello i'm sAi..👦🏻 !
           </div>
           <div
-            class="text-red-500 font-mono text-lg text-center tracking-wide py-2"
+            class="text-red-500 font-mono text-xs md:text-lg text-center tracking-wide py-2"
           >
             i'm a FrOnTeND dEV👨🏻‍💻
           </div>
           <div
-            class="text-[#6966ff] font-mono text-lg text-center tracking-wide py-2"
+            class="text-[#6966ff] font-mono text-xs md:text-lg text-center tracking-wide py-2"
           >
             Here my SToRy..📜
           </div>
           <div
-            class="text-[#82ff66] font-mono text-lg text-center tracking-wide py-2 ]"
+            class="text-[#82ff66] font-mono text-xs md:text-lg text-center tracking-wide py-2 ]"
           >
             click on PoWeR BtN ⏻
           </div>
@@ -33,16 +33,16 @@
       </div>
       <span class="mt-1"> ")</span>
     </div>
-    <div class="mt-12">
-      <span class="text-7xl">🧐</span>
+    <div class="md:mt-12">
+      <span class="text-3xl md:text-7xl">🧐</span>
       <p class="text-sm">
         Have you found the
         <span class="text-red-500">misalignment in above text</span>...<span
-          class="text-3xl text-amber-500"
+          class="md:text-3xl text-amber-500"
           >?</span
         >
       </p>
-      <p class="text-yellow-400 font-semibold font-serif">
+      <p class="text-yellow-400 font-semibold text-sm font-serif">
         " This div isn’t centered… neither is my life. "
       </p>
       <div class="mt-2">
